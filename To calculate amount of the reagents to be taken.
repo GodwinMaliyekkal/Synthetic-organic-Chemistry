@@ -1,0 +1,51 @@
+#chm easy tasking
+
+def multiply(x,y):
+    return x * y
+
+def divide(x,y):
+    return x/y
+
+n = int(input("Enter the number of compounds: "))
+name=[]
+molecular_weight = []
+eq = []
+for i in range(n):
+    nm = input("Enter the name of the compound: ")
+    mw = float(input("Enter the molecular weight of the compound: "))
+    e = float(input("Enter the eq for the compound: "))
+    name.append(nm)
+    molecular_weight.append(mw)
+    eq.append(e)
+
+    print("name: ",name)
+    print("moecular weight: ",molecular_weight)
+    print("eq: ",eq)
+
+# For compound 1
+
+amount_1 = float(input("Enter the amount of the compound 1: "))
+mmol_1 = divide(amount_1,molecular_weight[0])
+print("mmol_1: ",mmol_1)
+
+# For compound 2
+
+x = multiply(mmol_1,eq[1])
+mmol_2 = divide(x,eq[0])
+
+print("mmol_2: ",mmol_2)
+
+amount_2 = multiply(mmol_2,molecular_weight[1])
+
+print("amount_2: ",amount_2)
+
+# For compound 3
+
+y = multiply(mmol_2,eq[2])
+mmol_3 = divide(y,eq[1])
+
+print("mmol_3: ",mmol_3)
+
+amount_3 = multiply(mmol_3,molecular_weight[2])
+
+print("amount_3: ",amount_3)
